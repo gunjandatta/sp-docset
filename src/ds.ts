@@ -1,5 +1,4 @@
-import { Helper, List, Types } from "gd-sprest-bs";
-import { ListName } from "./cfg";
+import { Helper, ContextInfo } from "gd-sprest-bs";
 
 /**
  * Data Source
@@ -37,7 +36,7 @@ export const DataSource = {
         return new Promise((resolve, reject) => {
             // Get the item information
             Helper.ListForm.create({
-                listName: ListName,
+                listName: ContextInfo.listTitle,
                 itemId: DataSource.getItemId(),
                 fields: ["Title", "DocumentSetDescription"]
             }).then(resolve, reject);
