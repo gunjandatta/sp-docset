@@ -34,12 +34,19 @@ export const DataSource = {
     getItemInfo: (): PromiseLike<Helper.IListFormResult> => {
         // Return a promise
         return new Promise((resolve, reject) => {
-            // Get the item information
-            Helper.ListForm.create({
-                listName: ContextInfo.listTitle,
-                itemId: DataSource.getItemId(),
-                fields: ["Title", "DocumentSetDescription"]
-            }).then(resolve, reject);
+            // Get the item id
+            let itemId = DataSource.getItemId();
+            if (itemId) {
+                // Get the item information
+                Helper.ListForm.create({
+                    listName: ContextInfo.listTitle,
+                    itemId,
+                    fields: ["Title", "DocumentSetDescription"]
+                }).then(resolve, reject);
+            } else {
+                // Reject the promise
+                reject();
+            }
         });
     }
 }

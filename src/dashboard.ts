@@ -15,6 +15,12 @@ export const Dashboard = (el: HTMLElement) => {
         ].join('\n')
     });
 
+    // See if the page is currently being edited
+    if (Helper.WebPart.isEditMode()) {
+        // Do nothing
+        return;
+    }
+
     // Display a loading dialog
     Helper.SP.ModalDialog.showWaitScreenWithNoClose("Loading the Information").then(dlg => {
         // Load the item information
