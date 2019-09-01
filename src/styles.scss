@@ -1,0 +1,8 @@
+/*
+    SharePoint Online (You will have to adjust for SharePoint On-Premise Environments)
+    Target the top left webpart zone and hide it
+    Adjust the margins to give the right webpart zone the full width
+*/
+#DeltaPlaceHolderMain > table:first-child > tbody > tr > td:first-child {
+    display: none;
+}
