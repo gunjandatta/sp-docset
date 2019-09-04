@@ -28,8 +28,14 @@ export const DataSource = {
                 }
                 // Else, see if this is the root folder url
                 else if (key == "RootFolder") {
-                    // Set the folder url
-                    folderUrl = value;
+                    // Decode the folder url
+                    folderUrl = decodeURIComponent(value);
+
+                    // Get the root folder of the document set
+                    let rootFolder = folderUrl.replace(ContextInfo.listUrl + "/", "").split('/')[0];
+
+                    // Set the root folder url
+                    folderUrl = [ContextInfo.listUrl, rootFolder].join('/');
                 }
             }
 
