@@ -23,7 +23,7 @@ export const Configuration = Helper.SPConfig({
                         // Get the list document set home page
                         List(ListName).RootFolder().Folders("Forms").Folders("Document Set").Files("docsethomepage.aspx").execute(page => {
                             // Add the dashboard webpart
-                            Helper.WebPart.addWebPartToPage(page.ServerRelativeUrl, {
+                            Helper.addScriptEditorWebPart(page.ServerRelativeUrl, {
                                 title: "Dashboard",
                                 description: "Displays the custom dashboard.",
                                 chromeType: "None",
@@ -34,7 +34,7 @@ export const Configuration = Helper.SPConfig({
 
                             // Add the reference to the library and initialize script
                             // Add the dashboard webpart
-                            Helper.WebPart.addWebPartToPage(page.ServerRelativeUrl, {
+                            Helper.addScriptEditorWebPart(page.ServerRelativeUrl, {
                                 title: "Library Reference",
                                 description: "Loads the dashboard library and initializes the solution.",
                                 chromeType: "None",
