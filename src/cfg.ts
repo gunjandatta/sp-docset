@@ -41,7 +41,7 @@ export const Configuration = Helper.SPConfig({
                                 index: 0,
                                 zone: "WebPartZone_Bottom",
                                 content: [
-                                    '<script type="text/javascript" src="' + ContextInfo.webServerRelativeUrl + '/siteassets/sp-examples/sp-docset.js"></script>',
+                                    '<script type="text/javascript" src="' + ContextInfo.webServerRelativeUrl + '/siteassets/sp-docset.js"></script>',
                                     '<script type="text/javascript">',
                                     '// Wait for the library to be loaded',
                                     'SP.SOD.executeOrDelayUntilScriptLoaded(function() {',

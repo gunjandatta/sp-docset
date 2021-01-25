@@ -30,7 +30,6 @@ export const Dashboard = (el: HTMLElement) => {
                 // Render cards
                 Components.CardGroup({
                     el,
-                    isDeck: true,
                     cards: [
                         {
                             body: [
